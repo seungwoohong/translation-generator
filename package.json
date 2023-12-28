@@ -1,5 +1,5 @@
 {
-  "name": "translation-generator",
+  "name": "translation-gen",
   "version": "0.1.0",
   "description": "Generate translate json by google sheet automatically",
   "main": "index.js",
