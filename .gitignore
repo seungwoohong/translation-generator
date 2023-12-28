@@ -1,0 +1,6 @@
+node_modules
+.env
+/npm-debug.log
+/translationgen.json
+translationgen.yaml
+pnpm-lock.yaml

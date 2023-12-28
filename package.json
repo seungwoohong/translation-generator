@@ -1,0 +1,33 @@
+{
+  "name": "translation-generator",
+  "version": "0.1.0",
+  "description": "Generate translate json by google sheet automatically",
+  "main": "index.js",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/seungwoohong/translation-generator/issues",
+    "email": "alwls601@naver.com"
+  },
+  "keywords": [
+    "translation",
+    "i18n",
+    "gcp",
+    "locale",
+    "internationalization"
+  ],
+  "bin": {
+    "translationgen": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seungwoohong/translation-generator.git"
+  },
+  "author": "seungwoohong  <alwls601@naver.com> (https://github.com/seungwoohong)",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "google-auth-library": "^9.4.1",
+    "google-spreadsheet": "^4.1.1",
+    "js-yaml": "^4.1.0"
+  }
+}
