@@ -62,3 +62,16 @@ $ yarn transgen
 | sheetId        | ID of sheet                                                                                     | -       |
 | output         | output directory path                                                                           | -       |
 | locales        | Array\<locale\>, example: ['ko', 'en']                                                          | -       |
+
+<br/>
+
+### Example
+
+```yaml
+target: https://docs.google.com/spreadsheets/d/adfkljjdfslkjlk/edit#gid=0
+serviceAccount: google-workspace-manager@your_project.iam.gserviceaccount.com
+output: "./translation"
+locales: ["ko", "en", "jp"]
+sheet: "translation"
+sheetId: your_sheet_id
+```
