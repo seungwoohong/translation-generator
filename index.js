@@ -8,7 +8,7 @@ import { error } from "console";
 dotenv.config();
 
 const getAuthKey = () => {
-  const key = fs.readFileSync(process.env.LOCALEGEN_PRIVATE_KEY_PATH, {
+  const key = fs.readFileSync(process.env.TRANSLATIONGEN_PRIVATE_KEY_PATH, {
     encoding: "utf8",
   });
 
