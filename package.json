@@ -1,6 +1,6 @@
 {
   "name": "translation-gen",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate translate json by google sheet automatically",
   "main": "index.js",
   "type": "module",

@@ -1,1 +1,1 @@
-# translation-generator
+# translation-gen
