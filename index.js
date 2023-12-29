@@ -45,12 +45,12 @@ const makeDir = (name) => {
     fs.mkdirSync(name, { recursive: true });
   }
 };
-const makeJSON = (rows, locale) => {
+const makeJSON = (rows, locale, separator = ".") => {
   const json = {};
 
   rows.forEach((row) => {
     const key = row.get("KEY").trim();
-    const keys = key.split(".");
+    const keys = key.split(separator);
     const str = row.get(locale.toUpperCase());
 
     if (!str) return;
@@ -93,12 +93,16 @@ const writeJSON = (source, path) => {
   );
 };
 
-const generate = async (doc, locales, { output, sheetTitle }) => {
+const generate = async (
+  doc,
+  locales,
+  { output, sheetTitle, depthSeparator }
+) => {
   makeDir(output);
 
   locales.forEach(async (locale) => {
     const sheetRows = await readSheet(doc, sheetTitle);
-    const json = makeJSON(sheetRows, locale);
+    const json = makeJSON(sheetRows, locale, depthSeparator);
 
     writeJSON(
       JSON.stringify(json, null, 2),
@@ -108,4 +112,8 @@ const generate = async (doc, locales, { output, sheetTitle }) => {
   });
 };
 
-generate(doc, metadata.locales, { output, sheetTitle: metadata.sheet });
+generate(doc, metadata.locales, {
+  output,
+  sheetTitle: metadata.sheet,
+  depthSeparator: metadata.depthSeparator,
+});

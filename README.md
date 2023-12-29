@@ -6,8 +6,6 @@ Generate translation json file by Google Sheets
 
 ## Installation
 
----
-
 ```
 yarn add translation-gen -D
 
@@ -17,8 +15,6 @@ yarn add translation-gen -D
 <br/>
 
 ## Usage
-
----
 
 0. Create Service Account and key [Link](https://cloud.google.com/iam/docs/keys-create-delete?hl=ko)
 1. Add translationgen.yaml on root of your project
@@ -52,8 +48,6 @@ $ yarn transgen
 
 ## translationgen.yaml
 
----
-
 | KEY            | Description                                                                                     | default |
 | -------------- | ----------------------------------------------------------------------------------------------- | ------- |
 | target         | Google sheet file URL                                                                           | -       |
@@ -62,6 +56,7 @@ $ yarn transgen
 | sheetId        | ID of sheet                                                                                     | -       |
 | output         | output directory path                                                                           | -       |
 | locales        | Array\<locale\>, example: ['ko', 'en']                                                          | -       |
+| locales        | separator of key to represent depth                                                             | "."     |
 
 <br/>
 
@@ -74,4 +69,5 @@ output: "./translation"
 locales: ["ko", "en", "jp"]
 sheet: "translation"
 sheetId: your_sheet_id
+depthSeparator: $
 ```
