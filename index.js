@@ -56,20 +56,20 @@ const makeJSON = (rows, locale, separator = ".") => {
     if (!str) return;
 
     if (keys.length === 1) {
-      json[`${key}`] = str;
+      json[prune(key)] = prune(str);
     } else {
       let nested = json;
       const lastIndex = keys.length - 1;
 
       for (let i = 0; i < keys.length - 1; i++) {
-        const currentKey = keys[i];
+        const currentKey = prune(keys[i]);
 
         if (!nested[currentKey]) {
           nested[currentKey] = {};
         }
         nested = nested[currentKey];
       }
-      nested[keys[lastIndex]] = str;
+      nested[prune(keys[lastIndex])] = prune(str);
     }
   });
 
@@ -93,6 +93,13 @@ const writeJSON = (source, path) => {
   );
 };
 
+/**
+ * @description Remove invalid strings generated during encoding
+ */
+const prune = (string) => {
+  return string.replaceAll("\\n", "\n");
+};
+
 const generate = async (
   doc,
   locales,
@@ -103,12 +110,9 @@ const generate = async (
   locales.forEach(async (locale) => {
     const sheetRows = await readSheet(doc, sheetTitle);
     const json = makeJSON(sheetRows, locale, depthSeparator);
+    const source = JSON.stringify(json, null, 2);
 
-    writeJSON(
-      JSON.stringify(json, null, 2),
-      `${output}/${locale}.json`,
-      locale
-    );
+    writeJSON(source, `${output}/${locale}.json`, locale);
   });
 };
 
