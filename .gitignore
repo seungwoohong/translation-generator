@@ -4,3 +4,4 @@ node_modules
 /translationgen.json
 translationgen.yaml
 pnpm-lock.yaml
+translation
