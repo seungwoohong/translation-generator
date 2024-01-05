@@ -1,4 +1,4 @@
-# translation-gen [![NPM](https://img.shields.io/npm/v/translation-gen.svg)](https://npmjs.com/package/dlv) ![MIT](https://img.shields.io/badge/license-MIT-green)
+# translation-gen [![NPM](https://img.shields.io/npm/v/translation-gen.svg)](https://npmjs.com/package/translation-gen) ![MIT](https://img.shields.io/badge/license-MIT-green)
 
 Generate translation json file by Google Sheets
 
